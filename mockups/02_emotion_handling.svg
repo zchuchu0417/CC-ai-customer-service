@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 820" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF7F2"/>
+      <stop offset="100%" stop-color="#FEF1E8"/>
+    </linearGradient>
+    <linearGradient id="empathyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="100%" stop-color="#FEF3C7"/>
+    </linearGradient>
+    <linearGradient id="aiBubble2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FFFAF2"/>
+    </linearGradient>
+    <filter id="softShadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+    <filter id="cardShadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <filter id="urgentGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="820" fill="url(#bgGrad2)"/>
+
+  <!-- ====== Top Bar ====== -->
+  <rect x="0" y="0" width="1280" height="60" fill="#FFFFFF" filter="url(#softShadow2)"/>
+  <circle cx="36" cy="30" r="14" fill="#1F3864"/>
+  <text x="36" y="35" font-size="14" fill="#FFFFFF" text-anchor="middle" font-weight="700">CC</text>
+  <text x="64" y="36" font-size="17" font-weight="700" fill="#0F172A">小蓝商城 AI 客服助手</text>
+
+  <!-- Emotion mode badge -->
+  <rect x="290" y="18" width="124" height="24" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+  <circle cx="306" cy="30" r="4" fill="#F59E0B"/>
+  <text x="318" y="35" font-size="11" fill="#92400E" font-weight="600">😟 情绪关怀模式</text>
+
+  <circle cx="1240" cy="30" r="16" fill="#1F3864"/>
+  <text x="1240" y="35" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="600">张</text>
+
+  <!-- ====== Left Sidebar ====== -->
+  <rect x="0" y="60" width="240" height="760" fill="#FAFBFD"/>
+  <rect x="240" y="60" width="1" height="760" fill="#E2E8F0"/>
+
+  <rect x="16" y="80" width="208" height="40" rx="10" fill="#1F3864"/>
+  <text x="120" y="105" font-size="14" fill="#FFFFFF" text-anchor="middle" font-weight="600">+ 新建对话</text>
+
+  <text x="20" y="150" font-size="11" fill="#94A3B8" font-weight="600" letter-spacing="1">最近对话</text>
+
+  <rect x="12" y="166" width="216" height="56" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+  <circle cx="24" cy="180" r="3" fill="#F59E0B"/>
+  <text x="34" y="184" font-size="11" fill="#92400E" font-weight="600">⚡ 投诉处理中</text>
+  <text x="24" y="202" font-size="13" fill="#0F172A" font-weight="600">订单 ORD20250603 投诉</text>
+  <text x="24" y="216" font-size="11" fill="#64748B">质量问题，待解决</text>
+
+  <rect x="12" y="232" width="216" height="44" rx="8" fill="transparent"/>
+  <text x="24" y="252" font-size="13" fill="#334155">物流问题查询</text>
+  <text x="24" y="268" font-size="11" fill="#94A3B8">已解决 · 昨天</text>
+
+  <!-- ====== Main Chat ====== -->
+
+  <!-- User message (angry) -->
+  <rect x="560" y="100" width="500" height="120" rx="14" fill="#1F3864"/>
+  <text x="580" y="128" font-size="14" fill="#FFFFFF">这鞋子质量太差了！穿一周就开胶！</text>
+  <text x="580" y="150" font-size="14" fill="#FFFFFF">气死我了！你们 CC 商城就是这个水平？</text>
+  <text x="580" y="172" font-size="14" fill="#FFFFFF">必须给我退钱，否则我要投诉！😡</text>
+
+  <!-- Emotion detection indicator -->
+  <rect x="580" y="186" width="232" height="22" rx="11" fill="#FEE2E2" stroke="#FCA5A5"/>
+  <circle cx="595" cy="197" r="4" fill="#DC2626" filter="url(#urgentGlow)"/>
+  <text x="607" y="201" font-size="11" fill="#991B1B" font-weight="600">系统检测：愤怒情绪 · 强度 8/10</text>
+
+  <text x="560" y="240" font-size="11" fill="#94A3B8">15:42  ·  张哥  ·  订单 ORD20250603</text>
+
+  <!-- AI message (empathetic) -->
+  <circle cx="298" cy="280" r="16" fill="#F59E0B"/>
+  <text x="298" y="285" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="700">AI</text>
+
+  <rect x="324" y="262" width="736" height="406" rx="14" fill="url(#aiBubble2)" stroke="#FCD34D" stroke-width="1.5" filter="url(#cardShadow2)"/>
+
+  <!-- Empathy header -->
+  <rect x="324" y="262" width="736" height="60" rx="14" fill="url(#empathyGrad)"/>
+  <rect x="324" y="310" width="736" height="12" fill="url(#empathyGrad)"/>
+  <text x="348" y="290" font-size="14" fill="#92400E" font-weight="700">🙏 非常抱歉给您带来了不好的体验</text>
+  <text x="348" y="310" font-size="12" fill="#92400E">质量问题完全可以理解您的失落和愤怒，我会优先帮您处理</text>
+
+  <!-- Step 1 -->
+  <circle cx="348" cy="354" r="12" fill="#1F3864"/>
+  <text x="348" y="358" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="700">1</text>
+  <text x="372" y="358" font-size="13" fill="#0F172A" font-weight="600">订单核实</text>
+  <text x="372" y="378" font-size="12" fill="#475569">已查到订单 <tspan font-weight="700">ORD20250603</tspan>（运动鞋一双，¥298），</text>
+  <text x="372" y="396" font-size="12" fill="#475569">购买于 2026-06-04，符合 7 天质量问题退换条件【1】。</text>
+
+  <!-- Step 2 -->
+  <circle cx="348" cy="430" r="12" fill="#1F3864"/>
+  <text x="348" y="434" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="700">2</text>
+  <text x="372" y="434" font-size="13" fill="#0F172A" font-weight="600">解决方案（请二选一）</text>
+
+  <rect x="372" y="446" width="324" height="76" rx="10" fill="#FFFFFF" stroke="#1F3864" stroke-width="1.5"/>
+  <text x="388" y="466" font-size="12" font-weight="700" fill="#1F3864">方案 A · 立即退款</text>
+  <text x="388" y="484" font-size="11" fill="#475569">无需寄回，¥298 原路返回</text>
+  <text x="388" y="500" font-size="11" fill="#475569">预计 1-3 个工作日到账</text>
+  <text x="388" y="516" font-size="10" fill="#1F3864" font-weight="600">推荐 · 最快</text>
+
+  <rect x="708" y="446" width="324" height="76" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="724" y="466" font-size="12" font-weight="700" fill="#334155">方案 B · 换货补偿</text>
+  <text x="724" y="484" font-size="11" fill="#475569">免费换新 + 赠 ¥20 优惠券</text>
+  <text x="724" y="500" font-size="11" fill="#475569">2-4 天送达</text>
+  <text x="724" y="516" font-size="10" fill="#475569" font-weight="600">质量保证 · 平台兜底</text>
+
+  <!-- Step 3 -->
+  <circle cx="348" cy="556" r="12" fill="#1F3864"/>
+  <text x="348" y="560" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="700">3</text>
+  <text x="372" y="560" font-size="13" fill="#0F172A" font-weight="600">人工通道已为您预留</text>
+  <text x="372" y="580" font-size="12" fill="#475569">如以上方案未达到您的预期，可直接转接人工客服（当前队列 2 人，约 1 分钟）【2】</text>
+
+  <!-- Citation cards -->
+  <rect x="348" y="596" width="220" height="56" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="360" y="614" font-size="11" fill="#1F3864" font-weight="700">【1】质量问题退换政策</text>
+  <text x="360" y="630" font-size="10" fill="#64748B">售后政策 v3.1 · 第 2 章</text>
+  <text x="360" y="644" font-size="10" fill="#1F3864">📄 查看原文 →</text>
+
+  <rect x="580" y="596" width="220" height="56" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="592" y="614" font-size="11" fill="#1F3864" font-weight="700">【2】人工客服转接规则</text>
+  <text x="592" y="630" font-size="10" fill="#64748B">客服 SOP v1.5 · 投诉升级</text>
+  <text x="592" y="644" font-size="10" fill="#1F3864">📄 查看原文 →</text>
+
+  <!-- Action buttons -->
+  <rect x="280" y="688" width="220" height="44" rx="12" fill="#1F3864"/>
+  <text x="390" y="715" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="600">✅ 立即退款（推荐）</text>
+
+  <rect x="514" y="688" width="180" height="44" rx="12" fill="#FFFFFF" stroke="#1F3864" stroke-width="1.5"/>
+  <text x="604" y="715" font-size="13" fill="#1F3864" text-anchor="middle" font-weight="600">🔄 换货补偿</text>
+
+  <rect x="708" y="688" width="180" height="44" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="798" y="715" font-size="13" fill="#92400E" text-anchor="middle" font-weight="600">📞 转人工客服</text>
+
+  <rect x="902" y="688" width="158" height="44" rx="12" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="981" y="715" font-size="13" fill="#475569" text-anchor="middle">😔 我再想想</text>
+
+  <!-- Input box -->
+  <rect x="280" y="746" width="780" height="50" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#cardShadow2)"/>
+  <text x="304" y="776" font-size="13" fill="#94A3B8">您还可以继续输入需要补充的信息...</text>
+  <rect x="1010" y="758" width="36" height="28" rx="10" fill="#1F3864"/>
+  <text x="1028" y="777" font-size="14" fill="#FFFFFF" text-anchor="middle">➤</text>
+
+  <!-- ====== Right Side: Service quality panel ====== -->
+  <rect x="1080" y="84" width="184" height="552" rx="12" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#cardShadow2)"/>
+
+  <text x="1098" y="110" font-size="13" font-weight="700" fill="#0F172A">⚡ 本次对话状态</text>
+
+  <rect x="1098" y="128" width="148" height="56" rx="8" fill="#FEE2E2"/>
+  <text x="1108" y="146" font-size="10" fill="#991B1B" font-weight="600">情绪等级</text>
+  <text x="1108" y="168" font-size="18" fill="#991B1B" font-weight="700">愤怒 · 8/10</text>
+  <rect x="1108" y="172" width="128" height="4" rx="2" fill="#FCA5A5"/>
+  <rect x="1108" y="172" width="102" height="4" rx="2" fill="#DC2626"/>
+
+  <text x="1098" y="208" font-size="10" fill="#94A3B8" font-weight="600">SLA 计时</text>
+  <text x="1098" y="228" font-size="16" fill="#1F3864" font-weight="700">00:48</text>
+  <text x="1098" y="244" font-size="10" fill="#64748B">目标 ≤ 2 分钟</text>
+
+  <text x="1098" y="276" font-size="10" fill="#94A3B8" font-weight="600">处理路径</text>
+  <circle cx="1108" cy="298" r="6" fill="#10B981"/>
+  <text x="1122" y="302" font-size="11" fill="#334155">情绪识别 ✓</text>
+  <circle cx="1108" cy="320" r="6" fill="#10B981"/>
+  <text x="1122" y="324" font-size="11" fill="#334155">订单核实 ✓</text>
+  <circle cx="1108" cy="342" r="6" fill="#10B981"/>
+  <text x="1122" y="346" font-size="11" fill="#334155">方案推荐 ✓</text>
+  <circle cx="1108" cy="364" r="6" fill="#FCD34D"/>
+  <text x="1122" y="368" font-size="11" fill="#475569">等待用户确认</text>
+  <circle cx="1108" cy="386" r="6" fill="#E2E8F0"/>
+  <text x="1122" y="390" font-size="11" fill="#94A3B8">退款执行</text>
+
+  <text x="1098" y="424" font-size="10" fill="#94A3B8" font-weight="600">已用工具</text>
+  <rect x="1098" y="434" width="148" height="22" rx="6" fill="#F1F5F9"/>
+  <text x="1108" y="449" font-size="10" fill="#334155">🔧 query_order(ORD20250603)</text>
+  <rect x="1098" y="462" width="148" height="22" rx="6" fill="#F1F5F9"/>
+  <text x="1108" y="477" font-size="10" fill="#334155">🔧 check_refund_policy()</text>
+
+  <text x="1098" y="514" font-size="10" fill="#94A3B8" font-weight="600">智能建议</text>
+  <rect x="1098" y="524" width="148" height="76" rx="8" fill="#FFFBEB" stroke="#FCD34D"/>
+  <text x="1108" y="542" font-size="11" fill="#92400E" font-weight="600">💡 PM 提示</text>
+  <text x="1108" y="558" font-size="10" fill="#78350F">该用户为高价值客户，</text>
+  <text x="1108" y="572" font-size="10" fill="#78350F">本月第 2 次质量投诉，</text>
+  <text x="1108" y="586" font-size="10" fill="#78350F">建议优先全额退款</text>
+
+  <!-- Annotations -->
+  <g opacity="0.95">
+    <rect x="520" y="190" width="36" height="20" rx="4" fill="#FACC15"/>
+    <text x="538" y="205" font-size="11" font-weight="700" text-anchor="middle" fill="#713F12">①</text>
+    <text x="478" y="204" font-size="10" fill="#713F12" text-anchor="end">情绪识别</text>
+
+    <rect x="284" y="270" width="36" height="20" rx="4" fill="#FACC15"/>
+    <text x="302" y="285" font-size="11" font-weight="700" text-anchor="middle" fill="#713F12">②</text>
+    <text x="264" y="284" font-size="10" fill="#713F12" text-anchor="end">共情开场</text>
+
+    <rect x="284" y="450" width="36" height="20" rx="4" fill="#FACC15"/>
+    <text x="302" y="465" font-size="11" font-weight="700" text-anchor="middle" fill="#713F12">③</text>
+    <text x="264" y="464" font-size="10" fill="#713F12" text-anchor="end">分步方案</text>
+
+    <rect x="246" y="698" width="36" height="20" rx="4" fill="#FACC15"/>
+    <text x="264" y="713" font-size="11" font-weight="700" text-anchor="middle" fill="#713F12">④</text>
+
+    <rect x="1040" y="158" width="36" height="20" rx="4" fill="#FACC15"/>
+    <text x="1058" y="173" font-size="11" font-weight="700" text-anchor="middle" fill="#713F12">⑤</text>
+    <text x="1004" y="172" font-size="10" fill="#713F12" text-anchor="end">实时监控</text>
+  </g>
+
+</svg>
