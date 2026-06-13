@@ -1,0 +1,69 @@
+# CC 商城 AI 客服 - 基础设施栈
+# 用法：cd infra && docker compose up -d
+
+services:
+  # ============ MySQL 8.0 ============
+  # 存：用户、会话、消息、知识库元信息
+  mysql:
+    image: mysql:8.0
+    container_name: cc-mysql
+    restart: unless-stopped
+    ports:
+      - "13306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: cc_root_2026
+      MYSQL_DATABASE: cc_ai_cs
+      MYSQL_USER: cc_user
+      MYSQL_PASSWORD: cc_pass_2026
+      TZ: Asia/Shanghai
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-ucc_user", "-pcc_pass_2026"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============ Redis 7 ============
+  # 存：会话上下文缓存、限流计数、热点 Query
+  redis:
+    image: redis:7-alpine
+    container_name: cc-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  # ============ Qdrant 向量库 ============
+  # 存：知识库文档的 Embedding 向量
+  qdrant:
+    image: qdrant/qdrant:v1.11.0
+    container_name: cc-qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"  # HTTP API
+      - "6334:6334"  # gRPC API
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  # ============ Adminer ============
+  # MySQL 可视化管理后台（浏览器打开 http://localhost:8080）
+  adminer:
+    image: adminer:4.8.1
+    container_name: cc-adminer
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:
+  redis_data:
+  qdrant_data:
