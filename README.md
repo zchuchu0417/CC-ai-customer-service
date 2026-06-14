@@ -54,10 +54,29 @@
 
 ## 📅 4 周冲刺路线
 
-- [x] **W1** · PRD + Figma 原型 + 开发环境
-- [ ] **W2** · 后端骨架 + 数据库 + 知识库灌库
+- [x] **W1** · PRD + Figma 原型 + 开发环境 ✅
+- [x] **W2 Day 1** · 后端骨架 + 3 数据库连通 ✅
+- [ ] **W2 Day 2-3** · 数据建模 + 业务接口
 - [ ] **W3** · RAG 闭环 + 前端对话页
 - [ ] **W4** · Agent + 评测 + Demo 上线
+
+## 🛠 本地开发环境
+
+启动数据库栈：
+```bash
+cd infra && docker compose up -d
+```
+
+启动后端：
+```bash
+cd backend
+py -3.11 -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+访问 http://localhost:8000/docs 查看 API 文档。
 
 ## 👤 项目作者
 
