@@ -1,0 +1,55 @@
+﻿# ============ Python ============
+__pycache__/
+*.py[cod]
+*\.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual env
+backend/venv/
+venv/
+.venv/
+env/
+
+# ============ Environment ============
+.env
+backend/.env
+*.env.local
+
+# ============ Node / Frontend ============
+node_modules/
+frontend/node_modules/
+dist/
+build/
+*.log
+npm-debug.log*
+
+# ============ IDE ============
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ============ OS ============
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============ Office 临时文件 ============
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# ============ 项目自定义 ============
+# 知识库 PDF 不入 git（太大 & 可能版权）
+data/raw/
+data/*.pdf
+
+# 评测数据
+data/eval/private/
+
+# Docker volumes 数据
+infra/data/
