@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
-from app.routers import health
+from app.routers import health, sessions
 
 app = FastAPI(
     title="CC 商城 AI 客服 API",
@@ -23,6 +23,7 @@ app.add_middleware(
 
 # 注册路由
 app.include_router(health.router)
+app.include_router(sessions.router)
 
 
 @app.get("/", tags=["根路径"])
