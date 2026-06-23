@@ -23,7 +23,15 @@ class Settings(BaseSettings):
     qdrant_host: str = "localhost"
     qdrant_port: int = 6333
 
-    # LLM
+    # LLM（OpenAI 兼容协议，支持硅基流动 / DeepSeek 直连 / 智谱 / 任何兼容厂商）
+    llm_provider: str = "siliconflow"
+    llm_base_url: str = "https://api.siliconflow.cn/v1"
+    llm_api_key: str = ""
+    llm_model: str = "deepseek-ai/DeepSeek-V3"
+    llm_max_tokens: int = 1024
+    llm_temperature: float = 0.7
+
+    # 兼容旧字段（暂时保留，避免历史 .env 报错）
     deepseek_api_key: str = ""
     siliconflow_api_key: str = ""
 
@@ -34,7 +42,11 @@ class Settings(BaseSettings):
             f"@{self.mysql_host}:{self.mysql_port}/{self.mysql_db}"
         )
 
-    model_config = SettingsConfigDict(env_file=".env", case_sensitive=False)
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        case_sensitive=False,
+        extra="ignore",  # 忽略 .env 里多余的字段，避免新增配置时炸
+    )
 
 
 # 全局唯一实例
