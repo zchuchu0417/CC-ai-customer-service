@@ -1,5 +1,7 @@
 """消息相关的 HTTP 接口（嵌套在 sessions 下）"""
+import json
 from fastapi import APIRouter, Depends
+from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session as DbSession
 
 from app.db.base import get_db
@@ -49,3 +51,65 @@ def list_messages(
     db: DbSession = Depends(get_db),
 ):
     return message_service.list_messages(db, session_id)
+
+
+@router.post(
+    "/{session_id}/messages/stream",
+    summary="🚀 流式发送消息（SSE）",
+    description="""
+**SSE (Server-Sent Events) 接口** —— AI 逐 token 推送，用户体感快 10 倍。
+
+返回事件流（每行 `event: xxx` + `data: xxx`）：
+
+```
+event: start
+data: {"user_message_id": 123, "citations": [...]}
+
+event: token
+data: 你
+
+event: token
+data: 好
+
+...
+
+event: done
+data: {"assistant_message_id": 124, "tokens": 357, "latency_ms": 7158, "model": "..."}
+```
+
+⚠️ Swagger 不渲染 SSE 流。请用 curl 测试：
+```bash
+curl -N -X POST http://localhost:8000/api/v1/sessions/1/messages/stream \\
+  -H "Content-Type: application/json" \\
+  -d '{"content":"你好"}'
+```
+""",
+)
+def send_message_stream(
+    session_id: int,
+    payload: MessageCreate,
+    db: DbSession = Depends(get_db),
+):
+    def event_generator():
+        try:
+            for event in message_service.chat_stream(db, session_id, payload.content):
+                event_type = event["event"]
+                data = event["data"]
+                # SSE 标准格式：event: <type>\ndata: <json>\n\n
+                if isinstance(data, str):
+                    # token 是纯字符串，直接发
+                    yield f"event: {event_type}\ndata: {json.dumps(data, ensure_ascii=False)}\n\n"
+                else:
+                    yield f"event: {event_type}\ndata: {json.dumps(data, ensure_ascii=False)}\n\n"
+        except Exception as e:
+            yield f"event: error\ndata: {json.dumps({'message': str(e)[:200]}, ensure_ascii=False)}\n\n"
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",  # 禁用 Nginx 缓冲（如有反代）
+            "Connection": "keep-alive",
+        },
+    )

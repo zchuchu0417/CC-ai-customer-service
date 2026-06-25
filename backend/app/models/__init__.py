@@ -3,5 +3,6 @@ from app.models.user import User
 from app.models.session import Session
 from app.models.message import Message
 from app.models.feedback import Feedback
+from app.models.knowledge import KnowledgeDoc, DocChunk
 
-__all__ = ["User", "Session", "Message", "Feedback"]
+__all__ = ["User", "Session", "Message", "Feedback", "KnowledgeDoc", "DocChunk"]

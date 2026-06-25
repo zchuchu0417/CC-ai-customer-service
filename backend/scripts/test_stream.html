@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>CC 商城 AI 客服 · 流式测试</title>
+  <style>
+    body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; background: #f7fafc; color: #1a202c; }
+    h1 { font-size: 20px; }
+    .session-input { display: flex; gap: 10px; margin-bottom: 12px; }
+    input[type=number] { width: 80px; padding: 8px 10px; border-radius: 8px; border: 1px solid #cbd5e0; }
+    input[type=text] { flex: 1; padding: 10px 14px; border-radius: 10px; border: 1px solid #cbd5e0; font-size: 14px; }
+    button { padding: 10px 20px; border: 0; background: #1f3864; color: white; border-radius: 10px; cursor: pointer; font-size: 14px; }
+    button:disabled { background: #94a3b8; cursor: not-allowed; }
+    .answer { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; margin-top: 16px; min-height: 80px; white-space: pre-wrap; line-height: 1.7; }
+    .meta { color: #64748b; font-size: 12px; margin-top: 12px; padding: 12px; background: #f1f5f9; border-radius: 8px; }
+    .citations { margin-top: 16px; }
+    .citation-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; margin-top: 8px; font-size: 12px; }
+    .citation-card .title { color: #1f3864; font-weight: 600; }
+    .cursor::after { content: '▌'; animation: blink 0.8s infinite; color: #1f3864; }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+</head>
+<body>
+  <h1>🤖 CC 商城 AI 客服 · 流式测试</h1>
+
+  <div class="session-input">
+    <input id="sessionId" type="number" value="1" placeholder="session_id">
+    <input id="question" type="text" value="鞋子可以 7 天无理由退货吗？需要满足什么条件？" placeholder="输入问题">
+    <button id="sendBtn" onclick="send()">发送</button>
+  </div>
+
+  <div class="answer cursor" id="answer">点击发送，AI 会逐字回复…</div>
+
+  <div class="meta" id="meta" style="display:none"></div>
+  <div class="citations" id="citations"></div>
+
+  <script>
+    async function send() {
+      const sid = document.getElementById('sessionId').value;
+      const q = document.getElementById('question').value;
+      const answerEl = document.getElementById('answer');
+      const metaEl = document.getElementById('meta');
+      const citEl = document.getElementById('citations');
+      const btn = document.getElementById('sendBtn');
+
+      answerEl.textContent = '';
+      answerEl.classList.add('cursor');
+      metaEl.style.display = 'none';
+      citEl.innerHTML = '';
+      btn.disabled = true;
+      btn.textContent = '思考中...';
+
+      const startTime = Date.now();
+      let firstTokenTime = null;
+
+      try {
+        const resp = await fetch(`http://localhost:8000/api/v1/sessions/${sid}/messages/stream`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ content: q }),
+        });
+
+        const reader = resp.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+
+          // SSE 按 \n\n 分帧
+          const frames = buffer.split('\n\n');
+          buffer = frames.pop();  // 最后一段可能不完整，留下次
+
+          for (const frame of frames) {
+            if (!frame.trim()) continue;
+            const lines = frame.split('\n');
+            let event = 'message';
+            let data = '';
+            for (const line of lines) {
+              if (line.startsWith('event:')) event = line.slice(6).trim();
+              else if (line.startsWith('data:')) data = line.slice(5).trim();
+            }
+            handleEvent(event, data, answerEl, metaEl, citEl);
+            if (event === 'token' && !firstTokenTime) {
+              firstTokenTime = Date.now() - startTime;
+            }
+          }
+        }
+      } catch (e) {
+        answerEl.textContent = '出错：' + e.message;
+      } finally {
+        answerEl.classList.remove('cursor');
+        btn.disabled = false;
+        btn.textContent = '发送';
+        const total = Date.now() - startTime;
+        metaEl.innerHTML += `<br>首 token 耗时：<b>${firstTokenTime || '?'}</b> ms · 全程：<b>${total}</b> ms`;
+      }
+    }
+
+    function handleEvent(event, dataStr, answerEl, metaEl, citEl) {
+      let data;
+      try { data = JSON.parse(dataStr); } catch { data = dataStr; }
+
+      if (event === 'start') {
+        if (data.citations && data.citations.length) {
+          citEl.innerHTML = '<h3>📚 引用</h3>' + data.citations.map(c => `
+            <div class="citation-card">
+              <div class="title">【${c.index}】${c.title}${c.section ? ' · ' + c.section : ''}</div>
+              <div>${c.content_preview}</div>
+              <div style="color:#94a3b8;margin-top:4px">分数：${c.score} · 分类：${c.category}</div>
+            </div>
+          `).join('');
+        }
+      } else if (event === 'token') {
+        answerEl.textContent += (typeof data === 'string' ? data : '');
+      } else if (event === 'done') {
+        metaEl.style.display = 'block';
+        metaEl.innerHTML = `✅ 完成 · message_id: ${data.assistant_message_id} · ${data.tokens} tokens · ${data.latency_ms} ms · 模型 ${data.model}`;
+      } else if (event === 'error') {
+        answerEl.innerHTML = `<span style="color:#dc2626">❌ ${data.message}</span>`;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -27,7 +27,10 @@ class MessageResponse(BaseModel):
     latency_ms: int | None = None
     created_at: datetime
 
-    model_config = {"from_attributes": True}
+    model_config = {
+        "from_attributes": True,
+        "protected_namespaces": (),  # 允许 model_name 这种字段名
+    }
 
 
 class ChatResponse(BaseModel):

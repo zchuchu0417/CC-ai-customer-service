@@ -1,0 +1,50 @@
+{"id": 1, "question": "鞋子可以7天无理由退货吗", "expected_doc_ids": [1, 9], "category": "退换货"}
+{"id": 2, "question": "7天无理由退货需要满足什么条件", "expected_doc_ids": [1], "category": "退换货"}
+{"id": 3, "question": "什么情况下退货要自己出运费", "expected_doc_ids": [1, 2], "category": "退换货"}
+{"id": 4, "question": "内衣可以退货吗", "expected_doc_ids": [1], "category": "退换货"}
+{"id": 5, "question": "化妆品拆开了能退吗", "expected_doc_ids": [1], "category": "退换货"}
+{"id": 6, "question": "我的鞋子穿了一次发现尺码不合适能退吗", "expected_doc_ids": [1, 9], "category": "退换货"}
+{"id": 7, "question": "商品有质量问题怎么处理", "expected_doc_ids": [2], "category": "退换货"}
+{"id": 8, "question": "鞋子开胶了怎么办", "expected_doc_ids": [2, 9], "category": "退换货"}
+{"id": 9, "question": "质量问题退货运费谁出", "expected_doc_ids": [1, 2], "category": "退换货"}
+{"id": 10, "question": "假货怎么投诉", "expected_doc_ids": [2], "category": "退换货"}
+{"id": 11, "question": "包裹什么时候能到", "expected_doc_ids": [3], "category": "物流"}
+{"id": 12, "question": "你们发什么快递", "expected_doc_ids": [3], "category": "物流"}
+{"id": 13, "question": "西藏可以送货吗", "expected_doc_ids": [3], "category": "物流"}
+{"id": 14, "question": "包邮门槛多少", "expected_doc_ids": [3], "category": "物流"}
+{"id": 15, "question": "我的订单显示已签收但是没收到", "expected_doc_ids": [4], "category": "物流"}
+{"id": 16, "question": "包裹好几天没动了怎么办", "expected_doc_ids": [4], "category": "物流"}
+{"id": 17, "question": "怎么催发货", "expected_doc_ids": [4], "category": "物流"}
+{"id": 18, "question": "退货发什么快递好", "expected_doc_ids": [4], "category": "物流"}
+{"id": 19, "question": "优惠券能叠加用吗", "expected_doc_ids": [5, 6], "category": "优惠券"}
+{"id": 20, "question": "满减券和折扣券能一起用吗", "expected_doc_ids": [6], "category": "优惠券"}
+{"id": 21, "question": "优惠券怎么获得", "expected_doc_ids": [5], "category": "优惠券"}
+{"id": 22, "question": "秒杀商品能用优惠券吗", "expected_doc_ids": [5, 6], "category": "优惠券"}
+{"id": 23, "question": "退货后优惠券会退回吗", "expected_doc_ids": [5, 6], "category": "优惠券"}
+{"id": 24, "question": "金卡会员有什么权益", "expected_doc_ids": [7], "category": "会员"}
+{"id": 25, "question": "怎么升级到银卡", "expected_doc_ids": [7], "category": "会员"}
+{"id": 26, "question": "积分多久过期", "expected_doc_ids": [7], "category": "会员"}
+{"id": 27, "question": "黑卡有专属客服吗", "expected_doc_ids": [7], "category": "会员"}
+{"id": 28, "question": "会员等级会降吗", "expected_doc_ids": [7], "category": "会员"}
+{"id": 29, "question": "蓝牙耳机续航多久", "expected_doc_ids": [8], "category": "商品"}
+{"id": 30, "question": "CC Pods Pro能游泳戴吗", "expected_doc_ids": [8], "category": "商品"}
+{"id": 31, "question": "耳机丢了一只能单独买吗", "expected_doc_ids": [8], "category": "商品"}
+{"id": 32, "question": "运动跑鞋什么码", "expected_doc_ids": [9], "category": "商品"}
+{"id": 33, "question": "CC Run X1能跑马拉松吗", "expected_doc_ids": [9], "category": "商品"}
+{"id": 34, "question": "跑鞋的尺码偏大还是偏小", "expected_doc_ids": [9], "category": "商品"}
+{"id": 35, "question": "客服几点上班", "expected_doc_ids": [10], "category": "客服"}
+{"id": 36, "question": "怎么转人工", "expected_doc_ids": [10], "category": "客服"}
+{"id": 37, "question": "客服电话是多少", "expected_doc_ids": [10], "category": "客服"}
+{"id": 38, "question": "春节有客服吗", "expected_doc_ids": [10], "category": "客服"}
+{"id": 39, "question": "我能开发票吗", "expected_doc_ids": [11], "category": "发票"}
+{"id": 40, "question": "发票什么时候开", "expected_doc_ids": [11], "category": "发票"}
+{"id": 41, "question": "发票丢了怎么补开", "expected_doc_ids": [11], "category": "发票"}
+{"id": 42, "question": "可以开公司抬头吗", "expected_doc_ids": [11], "category": "发票"}
+{"id": 43, "question": "买了之后降价了能退差价吗", "expected_doc_ids": [12], "category": "价保"}
+{"id": 44, "question": "价保期是多久", "expected_doc_ids": [12], "category": "价保"}
+{"id": 45, "question": "双11买的还能价保吗", "expected_doc_ids": [12], "category": "价保"}
+{"id": 46, "question": "退款多久到账", "expected_doc_ids": [13], "category": "退款"}
+{"id": 47, "question": "微信退款怎么没收到", "expected_doc_ids": [13], "category": "退款"}
+{"id": 48, "question": "银行卡注销了退款去哪了", "expected_doc_ids": [13], "category": "退款"}
+{"id": 49, "question": "差评怎么删除", "expected_doc_ids": [14], "category": "评价"}
+{"id": 50, "question": "忘记密码怎么找回", "expected_doc_ids": [15], "category": "账户"}

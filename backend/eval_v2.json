@@ -1,0 +1,2226 @@
+{
+  "summary": {
+    "total_questions": 65,
+    "recall@5": 1.0,
+    "mrr": 0.9538,
+    "hits": 65,
+    "misses": 0,
+    "avg_latency_ms": 9546.7,
+    "by_category": {
+      "退换货": {
+        "total": 14,
+        "hits": 14,
+        "recall": 1.0
+      },
+      "物流": {
+        "total": 11,
+        "hits": 11,
+        "recall": 1.0
+      },
+      "优惠券": {
+        "total": 6,
+        "hits": 6,
+        "recall": 1.0
+      },
+      "会员": {
+        "total": 6,
+        "hits": 6,
+        "recall": 1.0
+      },
+      "商品": {
+        "total": 6,
+        "hits": 6,
+        "recall": 1.0
+      },
+      "客服": {
+        "total": 5,
+        "hits": 5,
+        "recall": 1.0
+      },
+      "发票": {
+        "total": 5,
+        "hits": 5,
+        "recall": 1.0
+      },
+      "价保": {
+        "total": 4,
+        "hits": 4,
+        "recall": 1.0
+      },
+      "退款": {
+        "total": 4,
+        "hits": 4,
+        "recall": 1.0
+      },
+      "评价": {
+        "total": 2,
+        "hits": 2,
+        "recall": 1.0
+      },
+      "账户": {
+        "total": 2,
+        "hits": 2,
+        "recall": 1.0
+      }
+    }
+  },
+  "details": [
+    {
+      "id": 1,
+      "question": "鞋子可以7天无理由退货吗",
+      "category": "退换货",
+      "expected_doc_ids": [
+        1,
+        9
+      ],
+      "retrieved_doc_ids": [
+        9,
+        9,
+        1,
+        1,
+        1
+      ],
+      "retrieved_titles": [
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 7 天无理由退货政策"
+      ],
+      "top_scores": [
+        0.9433,
+        0.931,
+        0.8939,
+        0.7999,
+        0.4095
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 7554
+    },
+    {
+      "id": 2,
+      "question": "7天无理由退货需要满足什么条件",
+      "category": "退换货",
+      "expected_doc_ids": [
+        1
+      ],
+      "retrieved_doc_ids": [
+        1,
+        1,
+        9,
+        8,
+        1
+      ],
+      "retrieved_titles": [
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 7 天无理由退货政策",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Pods Pro 无线蓝牙耳机",
+        "CC 商城 7 天无理由退货政策"
+      ],
+      "top_scores": [
+        0.9937,
+        0.8295,
+        0.816,
+        0.5664,
+        0.4703
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 7628
+    },
+    {
+      "id": 3,
+      "question": "什么情况下退货要自己出运费",
+      "category": "退换货",
+      "expected_doc_ids": [
+        1,
+        2
+      ],
+      "retrieved_doc_ids": [
+        1,
+        9,
+        4,
+        2,
+        8
+      ],
+      "retrieved_titles": [
+        "CC 商城 7 天无理由退货政策",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "CC 商城 物流异常处理规则",
+        "CC 商城 质量问题处理规则",
+        "商品手册：CC Pods Pro 无线蓝牙耳机"
+      ],
+      "top_scores": [
+        0.546,
+        0.106,
+        0.1051,
+        0.0739,
+        0.0494
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 8955
+    },
+    {
+      "id": 4,
+      "question": "内衣可以退货吗",
+      "category": "退换货",
+      "expected_doc_ids": [
+        1
+      ],
+      "retrieved_doc_ids": [
+        1,
+        1,
+        2,
+        3,
+        4
+      ],
+      "retrieved_titles": [
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 质量问题处理规则",
+        "CC 商城 物流配送规则",
+        "CC 商城 物流异常处理规则"
+      ],
+      "top_scores": [
+        0.9433,
+        0.3825,
+        0.1041,
+        0.0401,
+        0.0361
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9377
+    },
+    {
+      "id": 5,
+      "question": "化妆品拆开了能退吗",
+      "category": "退换货",
+      "expected_doc_ids": [
+        1
+      ],
+      "retrieved_doc_ids": [
+        1,
+        1,
+        3,
+        2,
+        1
+      ],
+      "retrieved_titles": [
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 物流配送规则",
+        "CC 商城 质量问题处理规则",
+        "CC 商城 7 天无理由退货政策"
+      ],
+      "top_scores": [
+        0.7298,
+        0.1767,
+        0.0496,
+        0.0333,
+        0.0236
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9651
+    },
+    {
+      "id": 6,
+      "question": "我的鞋子穿了一次发现尺码不合适能退吗",
+      "category": "退换货",
+      "expected_doc_ids": [
+        1,
+        9
+      ],
+      "retrieved_doc_ids": [
+        9,
+        9,
+        1,
+        12,
+        2
+      ],
+      "retrieved_titles": [
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 质量问题处理规则"
+      ],
+      "top_scores": [
+        0.9915,
+        0.5965,
+        0.1055,
+        0.1054,
+        0.0974
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9129
+    },
+    {
+      "id": 7,
+      "question": "商品有质量问题怎么处理",
+      "category": "退换货",
+      "expected_doc_ids": [
+        2
+      ],
+      "retrieved_doc_ids": [
+        2,
+        2,
+        1,
+        2,
+        2
+      ],
+      "retrieved_titles": [
+        "CC 商城 质量问题处理规则",
+        "CC 商城 质量问题处理规则",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 质量问题处理规则",
+        "CC 商城 质量问题处理规则"
+      ],
+      "top_scores": [
+        0.649,
+        0.4338,
+        0.4056,
+        0.3715,
+        0.3451
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 8336
+    },
+    {
+      "id": 8,
+      "question": "鞋子开胶了怎么办",
+      "category": "退换货",
+      "expected_doc_ids": [
+        9,
+        2
+      ],
+      "retrieved_doc_ids": [
+        9,
+        9,
+        2,
+        9,
+        3
+      ],
+      "retrieved_titles": [
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "CC 商城 质量问题处理规则",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "CC 商城 物流配送规则"
+      ],
+      "top_scores": [
+        0.2413,
+        0.0857,
+        0.0368,
+        0.0339,
+        0.0083
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 7403
+    },
+    {
+      "id": 9,
+      "question": "质量问题退货运费谁出",
+      "category": "退换货",
+      "expected_doc_ids": [
+        1,
+        2
+      ],
+      "retrieved_doc_ids": [
+        1,
+        9,
+        4,
+        2,
+        8
+      ],
+      "retrieved_titles": [
+        "CC 商城 7 天无理由退货政策",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "CC 商城 物流异常处理规则",
+        "CC 商城 质量问题处理规则",
+        "商品手册：CC Pods Pro 无线蓝牙耳机"
+      ],
+      "top_scores": [
+        0.8965,
+        0.3213,
+        0.2205,
+        0.2002,
+        0.19
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 7349
+    },
+    {
+      "id": 10,
+      "question": "假货怎么投诉",
+      "category": "退换货",
+      "expected_doc_ids": [
+        2
+      ],
+      "retrieved_doc_ids": [
+        14,
+        2,
+        14,
+        14,
+        2
+      ],
+      "retrieved_titles": [
+        "CC 商城 用户评价管理规则",
+        "CC 商城 质量问题处理规则",
+        "CC 商城 用户评价管理规则",
+        "CC 商城 用户评价管理规则",
+        "CC 商城 质量问题处理规则"
+      ],
+      "top_scores": [
+        0.2796,
+        0.1698,
+        0.1467,
+        0.102,
+        0.0832
+      ],
+      "hit": true,
+      "rank": 2,
+      "reciprocal_rank": 0.5,
+      "latency_ms": 9138
+    },
+    {
+      "id": 11,
+      "question": "包裹什么时候能到",
+      "category": "物流",
+      "expected_doc_ids": [
+        3
+      ],
+      "retrieved_doc_ids": [
+        3,
+        1,
+        4,
+        2,
+        11
+      ],
+      "retrieved_titles": [
+        "CC 商城 物流配送规则",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 物流异常处理规则",
+        "CC 商城 质量问题处理规则",
+        "CC 商城 发票开具政策"
+      ],
+      "top_scores": [
+        0.1906,
+        0.1162,
+        0.096,
+        0.0561,
+        0.0361
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9050
+    },
+    {
+      "id": 12,
+      "question": "你们发什么快递",
+      "category": "物流",
+      "expected_doc_ids": [
+        3
+      ],
+      "retrieved_doc_ids": [
+        4,
+        3,
+        3,
+        3,
+        3
+      ],
+      "retrieved_titles": [
+        "CC 商城 物流异常处理规则",
+        "CC 商城 物流配送规则",
+        "CC 商城 物流配送规则",
+        "CC 商城 物流配送规则",
+        "CC 商城 物流配送规则"
+      ],
+      "top_scores": [
+        0.0757,
+        0.0661,
+        0.0174,
+        0.0102,
+        0.0047
+      ],
+      "hit": true,
+      "rank": 2,
+      "reciprocal_rank": 0.5,
+      "latency_ms": 8996
+    },
+    {
+      "id": 13,
+      "question": "西藏可以送货吗",
+      "category": "物流",
+      "expected_doc_ids": [
+        3
+      ],
+      "retrieved_doc_ids": [
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "retrieved_titles": [
+        "CC 商城 物流配送规则",
+        "CC 商城 物流配送规则",
+        "CC 商城 物流配送规则",
+        "CC 商城 物流配送规则",
+        "CC 商城 物流异常处理规则"
+      ],
+      "top_scores": [
+        0.3995,
+        0.074,
+        0.0647,
+        0.0034,
+        0.0029
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9182
+    },
+    {
+      "id": 14,
+      "question": "包邮门槛多少",
+      "category": "物流",
+      "expected_doc_ids": [
+        3
+      ],
+      "retrieved_doc_ids": [
+        3,
+        7,
+        5,
+        7,
+        6
+      ],
+      "retrieved_titles": [
+        "CC 商城 物流配送规则",
+        "CC 商城 会员等级与权益",
+        "CC 商城 优惠券适用范围规则",
+        "CC 商城 会员等级与权益",
+        "CC 商城 优惠券叠加使用规则"
+      ],
+      "top_scores": [
+        0.6764,
+        0.3766,
+        0.0228,
+        0.0144,
+        0.0116
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9169
+    },
+    {
+      "id": 15,
+      "question": "我的订单显示已签收但是没收到",
+      "category": "物流",
+      "expected_doc_ids": [
+        4
+      ],
+      "retrieved_doc_ids": [
+        4,
+        4,
+        13,
+        4,
+        13
+      ],
+      "retrieved_titles": [
+        "CC 商城 物流异常处理规则",
+        "CC 商城 物流异常处理规则",
+        "CC 商城 退款到账时间说明",
+        "CC 商城 物流异常处理规则",
+        "CC 商城 退款到账时间说明"
+      ],
+      "top_scores": [
+        0.9888,
+        0.8459,
+        0.1532,
+        0.1202,
+        0.1114
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9239
+    },
+    {
+      "id": 16,
+      "question": "包裹好几天没动了怎么办",
+      "category": "物流",
+      "expected_doc_ids": [
+        4
+      ],
+      "retrieved_doc_ids": [
+        4,
+        4,
+        4,
+        2,
+        4
+      ],
+      "retrieved_titles": [
+        "CC 商城 物流异常处理规则",
+        "CC 商城 物流异常处理规则",
+        "CC 商城 物流异常处理规则",
+        "CC 商城 质量问题处理规则",
+        "CC 商城 物流异常处理规则"
+      ],
+      "top_scores": [
+        0.4483,
+        0.1918,
+        0.1041,
+        0.0638,
+        0.0286
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9245
+    },
+    {
+      "id": 17,
+      "question": "怎么催发货",
+      "category": "物流",
+      "expected_doc_ids": [
+        4
+      ],
+      "retrieved_doc_ids": [
+        4,
+        4,
+        4,
+        13,
+        2
+      ],
+      "retrieved_titles": [
+        "CC 商城 物流异常处理规则",
+        "CC 商城 物流异常处理规则",
+        "CC 商城 物流异常处理规则",
+        "CC 商城 退款到账时间说明",
+        "CC 商城 质量问题处理规则"
+      ],
+      "top_scores": [
+        0.9221,
+        0.1207,
+        0.0455,
+        0.0324,
+        0.0311
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9269
+    },
+    {
+      "id": 18,
+      "question": "退货发什么快递好",
+      "category": "物流",
+      "expected_doc_ids": [
+        4
+      ],
+      "retrieved_doc_ids": [
+        4,
+        2,
+        3,
+        1,
+        4
+      ],
+      "retrieved_titles": [
+        "CC 商城 物流异常处理规则",
+        "CC 商城 质量问题处理规则",
+        "CC 商城 物流配送规则",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 物流异常处理规则"
+      ],
+      "top_scores": [
+        0.9179,
+        0.1261,
+        0.0869,
+        0.0115,
+        0.0111
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 10008
+    },
+    {
+      "id": 19,
+      "question": "优惠券能叠加用吗",
+      "category": "优惠券",
+      "expected_doc_ids": [
+        5,
+        6
+      ],
+      "retrieved_doc_ids": [
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "retrieved_titles": [
+        "CC 商城 优惠券适用范围规则",
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 优惠券叠加使用规则"
+      ],
+      "top_scores": [
+        0.9918,
+        0.9768,
+        0.9727,
+        0.9445,
+        0.9419
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9017
+    },
+    {
+      "id": 20,
+      "question": "满减券和折扣券能一起用吗",
+      "category": "优惠券",
+      "expected_doc_ids": [
+        6
+      ],
+      "retrieved_doc_ids": [
+        6,
+        6,
+        6,
+        6,
+        5
+      ],
+      "retrieved_titles": [
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 优惠券适用范围规则"
+      ],
+      "top_scores": [
+        0.9808,
+        0.9533,
+        0.8912,
+        0.8385,
+        0.4337
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 13216
+    },
+    {
+      "id": 21,
+      "question": "优惠券怎么获得",
+      "category": "优惠券",
+      "expected_doc_ids": [
+        5
+      ],
+      "retrieved_doc_ids": [
+        5,
+        5,
+        6,
+        5,
+        5
+      ],
+      "retrieved_titles": [
+        "CC 商城 优惠券适用范围规则",
+        "CC 商城 优惠券适用范围规则",
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 优惠券适用范围规则",
+        "CC 商城 优惠券适用范围规则"
+      ],
+      "top_scores": [
+        0.6002,
+        0.2557,
+        0.1316,
+        0.078,
+        0.0663
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 13271
+    },
+    {
+      "id": 22,
+      "question": "秒杀商品能用优惠券吗",
+      "category": "优惠券",
+      "expected_doc_ids": [
+        5,
+        6
+      ],
+      "retrieved_doc_ids": [
+        5,
+        6,
+        5,
+        5,
+        12
+      ],
+      "retrieved_titles": [
+        "CC 商城 优惠券适用范围规则",
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 优惠券适用范围规则",
+        "CC 商城 优惠券适用范围规则",
+        "CC 商城 价格保护（价保）规则"
+      ],
+      "top_scores": [
+        0.9859,
+        0.5318,
+        0.4113,
+        0.3524,
+        0.2095
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9868
+    },
+    {
+      "id": 23,
+      "question": "退货后优惠券会退回吗",
+      "category": "优惠券",
+      "expected_doc_ids": [
+        5,
+        6
+      ],
+      "retrieved_doc_ids": [
+        5,
+        5,
+        13,
+        6,
+        2
+      ],
+      "retrieved_titles": [
+        "CC 商城 优惠券适用范围规则",
+        "CC 商城 优惠券适用范围规则",
+        "CC 商城 退款到账时间说明",
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 质量问题处理规则"
+      ],
+      "top_scores": [
+        0.9412,
+        0.8702,
+        0.2587,
+        0.1522,
+        0.0965
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9288
+    },
+    {
+      "id": 24,
+      "question": "金卡会员有什么权益",
+      "category": "会员",
+      "expected_doc_ids": [
+        7
+      ],
+      "retrieved_doc_ids": [
+        2,
+        7,
+        7,
+        5,
+        12
+      ],
+      "retrieved_titles": [
+        "CC 商城 质量问题处理规则",
+        "CC 商城 会员等级与权益",
+        "CC 商城 会员等级与权益",
+        "CC 商城 优惠券适用范围规则",
+        "CC 商城 价格保护（价保）规则"
+      ],
+      "top_scores": [
+        0.8069,
+        0.4043,
+        0.3233,
+        0.2265,
+        0.2248
+      ],
+      "hit": true,
+      "rank": 2,
+      "reciprocal_rank": 0.5,
+      "latency_ms": 11077
+    },
+    {
+      "id": 25,
+      "question": "怎么升级到银卡",
+      "category": "会员",
+      "expected_doc_ids": [
+        7
+      ],
+      "retrieved_doc_ids": [
+        7,
+        7,
+        10,
+        12,
+        15
+      ],
+      "retrieved_titles": [
+        "CC 商城 会员等级与权益",
+        "CC 商城 会员等级与权益",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 账户安全规则"
+      ],
+      "top_scores": [
+        0.1582,
+        0.0268,
+        0.0052,
+        0.0029,
+        0.0023
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 12774
+    },
+    {
+      "id": 26,
+      "question": "积分多久过期",
+      "category": "会员",
+      "expected_doc_ids": [
+        7
+      ],
+      "retrieved_doc_ids": [
+        7,
+        4,
+        12,
+        1,
+        3
+      ],
+      "retrieved_titles": [
+        "CC 商城 会员等级与权益",
+        "CC 商城 物流异常处理规则",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 物流配送规则"
+      ],
+      "top_scores": [
+        0.6616,
+        0.0118,
+        0.0047,
+        0.004,
+        0.0035
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 14135
+    },
+    {
+      "id": 27,
+      "question": "黑卡有专属客服吗",
+      "category": "会员",
+      "expected_doc_ids": [
+        7
+      ],
+      "retrieved_doc_ids": [
+        10,
+        7,
+        7,
+        10,
+        5
+      ],
+      "retrieved_titles": [
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 会员等级与权益",
+        "CC 商城 会员等级与权益",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 优惠券适用范围规则"
+      ],
+      "top_scores": [
+        0.9837,
+        0.9247,
+        0.7099,
+        0.0203,
+        0.0118
+      ],
+      "hit": true,
+      "rank": 2,
+      "reciprocal_rank": 0.5,
+      "latency_ms": 11387
+    },
+    {
+      "id": 28,
+      "question": "会员等级会降吗",
+      "category": "会员",
+      "expected_doc_ids": [
+        7
+      ],
+      "retrieved_doc_ids": [
+        7,
+        7,
+        7,
+        7,
+        12
+      ],
+      "retrieved_titles": [
+        "CC 商城 会员等级与权益",
+        "CC 商城 会员等级与权益",
+        "CC 商城 会员等级与权益",
+        "CC 商城 会员等级与权益",
+        "CC 商城 价格保护（价保）规则"
+      ],
+      "top_scores": [
+        0.0334,
+        0.0326,
+        0.017,
+        0.0041,
+        0.004
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 13691
+    },
+    {
+      "id": 29,
+      "question": "蓝牙耳机续航多久",
+      "category": "商品",
+      "expected_doc_ids": [
+        8
+      ],
+      "retrieved_doc_ids": [
+        8,
+        8,
+        8,
+        12,
+        3
+      ],
+      "retrieved_titles": [
+        "商品手册：CC Pods Pro 无线蓝牙耳机",
+        "商品手册：CC Pods Pro 无线蓝牙耳机",
+        "商品手册：CC Pods Pro 无线蓝牙耳机",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 物流配送规则"
+      ],
+      "top_scores": [
+        0.7242,
+        0.5934,
+        0.0578,
+        0.0404,
+        0.0189
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 11701
+    },
+    {
+      "id": 30,
+      "question": "CC Pods Pro能游泳戴吗",
+      "category": "商品",
+      "expected_doc_ids": [
+        8
+      ],
+      "retrieved_doc_ids": [
+        8,
+        8,
+        8,
+        9,
+        8
+      ],
+      "retrieved_titles": [
+        "商品手册：CC Pods Pro 无线蓝牙耳机",
+        "商品手册：CC Pods Pro 无线蓝牙耳机",
+        "商品手册：CC Pods Pro 无线蓝牙耳机",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Pods Pro 无线蓝牙耳机"
+      ],
+      "top_scores": [
+        0.735,
+        0.5742,
+        0.1245,
+        0.0874,
+        0.016
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 12242
+    },
+    {
+      "id": 31,
+      "question": "耳机丢了一只能单独买吗",
+      "category": "商品",
+      "expected_doc_ids": [
+        8
+      ],
+      "retrieved_doc_ids": [
+        8,
+        2,
+        8,
+        2,
+        1
+      ],
+      "retrieved_titles": [
+        "商品手册：CC Pods Pro 无线蓝牙耳机",
+        "CC 商城 质量问题处理规则",
+        "商品手册：CC Pods Pro 无线蓝牙耳机",
+        "CC 商城 质量问题处理规则",
+        "CC 商城 7 天无理由退货政策"
+      ],
+      "top_scores": [
+        0.9384,
+        0.0215,
+        0.0085,
+        0.0056,
+        0.0045
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 8333
+    },
+    {
+      "id": 32,
+      "question": "运动跑鞋什么码",
+      "category": "商品",
+      "expected_doc_ids": [
+        9
+      ],
+      "retrieved_doc_ids": [
+        9,
+        9,
+        9,
+        9,
+        6
+      ],
+      "retrieved_titles": [
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "CC 商城 优惠券叠加使用规则"
+      ],
+      "top_scores": [
+        0.9173,
+        0.8943,
+        0.5497,
+        0.3365,
+        0.009
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 7410
+    },
+    {
+      "id": 33,
+      "question": "CC Run X1能跑马拉松吗",
+      "category": "商品",
+      "expected_doc_ids": [
+        9
+      ],
+      "retrieved_doc_ids": [
+        9,
+        9,
+        9,
+        8,
+        8
+      ],
+      "retrieved_titles": [
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Pods Pro 无线蓝牙耳机",
+        "商品手册：CC Pods Pro 无线蓝牙耳机"
+      ],
+      "top_scores": [
+        0.8651,
+        0.7168,
+        0.6187,
+        0.0066,
+        0.0034
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 7503
+    },
+    {
+      "id": 34,
+      "question": "跑鞋的尺码偏大还是偏小",
+      "category": "商品",
+      "expected_doc_ids": [
+        9
+      ],
+      "retrieved_doc_ids": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "retrieved_titles": [
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Run X1 男女款运动跑鞋"
+      ],
+      "top_scores": [
+        0.9723,
+        0.2037,
+        0.1284,
+        0.0164,
+        0.0053
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 7435
+    },
+    {
+      "id": 35,
+      "question": "客服几点上班",
+      "category": "客服",
+      "expected_doc_ids": [
+        10
+      ],
+      "retrieved_doc_ids": [
+        10,
+        10,
+        10,
+        10,
+        14
+      ],
+      "retrieved_titles": [
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 用户评价管理规则"
+      ],
+      "top_scores": [
+        0.5241,
+        0.4496,
+        0.0413,
+        0.0105,
+        0.0058
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 7450
+    },
+    {
+      "id": 36,
+      "question": "怎么转人工",
+      "category": "客服",
+      "expected_doc_ids": [
+        10
+      ],
+      "retrieved_doc_ids": [
+        10,
+        10,
+        10,
+        15,
+        11
+      ],
+      "retrieved_titles": [
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 账户安全规则",
+        "CC 商城 发票开具政策"
+      ],
+      "top_scores": [
+        0.7603,
+        0.1336,
+        0.0427,
+        0.0148,
+        0.0037
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9318
+    },
+    {
+      "id": 37,
+      "question": "客服电话是多少",
+      "category": "客服",
+      "expected_doc_ids": [
+        10
+      ],
+      "retrieved_doc_ids": [
+        1,
+        10,
+        7,
+        10,
+        14
+      ],
+      "retrieved_titles": [
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 会员等级与权益",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 用户评价管理规则"
+      ],
+      "top_scores": [
+        0.2836,
+        0.2099,
+        0.0091,
+        0.0069,
+        0.0061
+      ],
+      "hit": true,
+      "rank": 2,
+      "reciprocal_rank": 0.5,
+      "latency_ms": 9301
+    },
+    {
+      "id": 38,
+      "question": "春节有客服吗",
+      "category": "客服",
+      "expected_doc_ids": [
+        10
+      ],
+      "retrieved_doc_ids": [
+        10,
+        10,
+        7,
+        10,
+        14
+      ],
+      "retrieved_titles": [
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 会员等级与权益",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 用户评价管理规则"
+      ],
+      "top_scores": [
+        0.784,
+        0.1982,
+        0.015,
+        0.0068,
+        0.0061
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9214
+    },
+    {
+      "id": 39,
+      "question": "我能开发票吗",
+      "category": "发票",
+      "expected_doc_ids": [
+        11
+      ],
+      "retrieved_doc_ids": [
+        11,
+        11,
+        11,
+        11,
+        11
+      ],
+      "retrieved_titles": [
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策"
+      ],
+      "top_scores": [
+        0.6029,
+        0.4003,
+        0.312,
+        0.2367,
+        0.2064
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9054
+    },
+    {
+      "id": 40,
+      "question": "发票什么时候开",
+      "category": "发票",
+      "expected_doc_ids": [
+        11
+      ],
+      "retrieved_doc_ids": [
+        11,
+        11,
+        11,
+        11,
+        11
+      ],
+      "retrieved_titles": [
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策"
+      ],
+      "top_scores": [
+        0.8757,
+        0.3658,
+        0.358,
+        0.0238,
+        0.022
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 13858
+    },
+    {
+      "id": 41,
+      "question": "发票丢了怎么补开",
+      "category": "发票",
+      "expected_doc_ids": [
+        11
+      ],
+      "retrieved_doc_ids": [
+        11,
+        11,
+        11,
+        11,
+        11
+      ],
+      "retrieved_titles": [
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策"
+      ],
+      "top_scores": [
+        0.9692,
+        0.2316,
+        0.1454,
+        0.0981,
+        0.0397
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9494
+    },
+    {
+      "id": 42,
+      "question": "可以开公司抬头吗",
+      "category": "发票",
+      "expected_doc_ids": [
+        11
+      ],
+      "retrieved_doc_ids": [
+        11,
+        11,
+        7,
+        7,
+        9
+      ],
+      "retrieved_titles": [
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策",
+        "CC 商城 会员等级与权益",
+        "CC 商城 会员等级与权益",
+        "商品手册：CC Run X1 男女款运动跑鞋"
+      ],
+      "top_scores": [
+        0.9022,
+        0.0015,
+        0.0002,
+        0.0002,
+        0.0002
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9231
+    },
+    {
+      "id": 43,
+      "question": "买了之后降价了能退差价吗",
+      "category": "价保",
+      "expected_doc_ids": [
+        12
+      ],
+      "retrieved_doc_ids": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "retrieved_titles": [
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 价格保护（价保）规则"
+      ],
+      "top_scores": [
+        0.9707,
+        0.4479,
+        0.4209,
+        0.1929,
+        0.0227
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9203
+    },
+    {
+      "id": 44,
+      "question": "价保期是多久",
+      "category": "价保",
+      "expected_doc_ids": [
+        12
+      ],
+      "retrieved_doc_ids": [
+        12,
+        12,
+        12,
+        9,
+        12
+      ],
+      "retrieved_titles": [
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 价格保护（价保）规则",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "CC 商城 价格保护（价保）规则"
+      ],
+      "top_scores": [
+        0.844,
+        0.7676,
+        0.1727,
+        0.1016,
+        0.0875
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9004
+    },
+    {
+      "id": 45,
+      "question": "双11买的还能价保吗",
+      "category": "价保",
+      "expected_doc_ids": [
+        12
+      ],
+      "retrieved_doc_ids": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "retrieved_titles": [
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 价格保护（价保）规则"
+      ],
+      "top_scores": [
+        0.9926,
+        0.8759,
+        0.4574,
+        0.384,
+        0.2672
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9194
+    },
+    {
+      "id": 46,
+      "question": "退款多久到账",
+      "category": "退款",
+      "expected_doc_ids": [
+        13
+      ],
+      "retrieved_doc_ids": [
+        13,
+        13,
+        13,
+        1,
+        13
+      ],
+      "retrieved_titles": [
+        "CC 商城 退款到账时间说明",
+        "CC 商城 退款到账时间说明",
+        "CC 商城 退款到账时间说明",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 退款到账时间说明"
+      ],
+      "top_scores": [
+        0.928,
+        0.8838,
+        0.8675,
+        0.8622,
+        0.7502
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9210
+    },
+    {
+      "id": 47,
+      "question": "微信退款怎么没收到",
+      "category": "退款",
+      "expected_doc_ids": [
+        13
+      ],
+      "retrieved_doc_ids": [
+        13,
+        13,
+        4,
+        12,
+        13
+      ],
+      "retrieved_titles": [
+        "CC 商城 退款到账时间说明",
+        "CC 商城 退款到账时间说明",
+        "CC 商城 物流异常处理规则",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 退款到账时间说明"
+      ],
+      "top_scores": [
+        0.8288,
+        0.7127,
+        0.265,
+        0.071,
+        0.0574
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9265
+    },
+    {
+      "id": 48,
+      "question": "银行卡注销了退款去哪了",
+      "category": "退款",
+      "expected_doc_ids": [
+        13
+      ],
+      "retrieved_doc_ids": [
+        13,
+        13,
+        1,
+        12,
+        2
+      ],
+      "retrieved_titles": [
+        "CC 商城 退款到账时间说明",
+        "CC 商城 退款到账时间说明",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 质量问题处理规则"
+      ],
+      "top_scores": [
+        0.9013,
+        0.1082,
+        0.0221,
+        0.016,
+        0.0158
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9253
+    },
+    {
+      "id": 49,
+      "question": "差评怎么删除",
+      "category": "评价",
+      "expected_doc_ids": [
+        14
+      ],
+      "retrieved_doc_ids": [
+        14,
+        14,
+        14,
+        14,
+        14
+      ],
+      "retrieved_titles": [
+        "CC 商城 用户评价管理规则",
+        "CC 商城 用户评价管理规则",
+        "CC 商城 用户评价管理规则",
+        "CC 商城 用户评价管理规则",
+        "CC 商城 用户评价管理规则"
+      ],
+      "top_scores": [
+        0.8204,
+        0.2992,
+        0.1481,
+        0.1448,
+        0.0712
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9253
+    },
+    {
+      "id": 50,
+      "question": "忘记密码怎么找回",
+      "category": "账户",
+      "expected_doc_ids": [
+        15
+      ],
+      "retrieved_doc_ids": [
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "retrieved_titles": [
+        "CC 商城 账户安全规则",
+        "CC 商城 账户安全规则",
+        "CC 商城 账户安全规则",
+        "CC 商城 账户安全规则",
+        "CC 商城 账户安全规则"
+      ],
+      "top_scores": [
+        0.9109,
+        0.0876,
+        0.0548,
+        0.0481,
+        0.0454
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9223
+    },
+    {
+      "id": 101,
+      "question": "亲那个鞋子我穿了一下又不太喜欢能给我送回去不",
+      "category": "退换货",
+      "expected_doc_ids": [
+        1,
+        9
+      ],
+      "retrieved_doc_ids": [
+        9,
+        9,
+        2,
+        1,
+        4
+      ],
+      "retrieved_titles": [
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "CC 商城 质量问题处理规则",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 物流异常处理规则"
+      ],
+      "top_scores": [
+        0.3273,
+        0.2431,
+        0.1113,
+        0.0921,
+        0.0356
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9248
+    },
+    {
+      "id": 102,
+      "question": "买回来的衣服没拆吊牌但是洗过一次还能退么",
+      "category": "退换货",
+      "expected_doc_ids": [
+        1
+      ],
+      "retrieved_doc_ids": [
+        1,
+        1,
+        2,
+        3,
+        1
+      ],
+      "retrieved_titles": [
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 质量问题处理规则",
+        "CC 商城 物流配送规则",
+        "CC 商城 7 天无理由退货政策"
+      ],
+      "top_scores": [
+        0.3065,
+        0.0496,
+        0.0225,
+        0.0154,
+        0.0093
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9231
+    },
+    {
+      "id": 103,
+      "question": "我买的口红还没用呢能退不",
+      "category": "退换货",
+      "expected_doc_ids": [
+        1
+      ],
+      "retrieved_doc_ids": [
+        1,
+        1,
+        2,
+        1,
+        4
+      ],
+      "retrieved_titles": [
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 质量问题处理规则",
+        "CC 商城 7 天无理由退货政策",
+        "CC 商城 物流异常处理规则"
+      ],
+      "top_scores": [
+        0.2153,
+        0.1959,
+        0.0883,
+        0.0332,
+        0.032
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9200
+    },
+    {
+      "id": 104,
+      "question": "包邮门坎是多少",
+      "category": "物流",
+      "expected_doc_ids": [
+        3
+      ],
+      "retrieved_doc_ids": [
+        7,
+        3,
+        5,
+        7,
+        12
+      ],
+      "retrieved_titles": [
+        "CC 商城 会员等级与权益",
+        "CC 商城 物流配送规则",
+        "CC 商城 优惠券适用范围规则",
+        "CC 商城 会员等级与权益",
+        "CC 商城 价格保护（价保）规则"
+      ],
+      "top_scores": [
+        0.1332,
+        0.1125,
+        0.0039,
+        0.0021,
+        0.0015
+      ],
+      "hit": true,
+      "rank": 2,
+      "reciprocal_rank": 0.5,
+      "latency_ms": 9278
+    },
+    {
+      "id": 105,
+      "question": "你们家东西到江西要几天",
+      "category": "物流",
+      "expected_doc_ids": [
+        3
+      ],
+      "retrieved_doc_ids": [
+        3,
+        13,
+        4,
+        11,
+        3
+      ],
+      "retrieved_titles": [
+        "CC 商城 物流配送规则",
+        "CC 商城 退款到账时间说明",
+        "CC 商城 物流异常处理规则",
+        "CC 商城 发票开具政策",
+        "CC 商城 物流配送规则"
+      ],
+      "top_scores": [
+        0.0416,
+        0.0185,
+        0.0185,
+        0.0165,
+        0.0164
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9202
+    },
+    {
+      "id": 106,
+      "question": "明明显示送到了我也没收到啊",
+      "category": "物流",
+      "expected_doc_ids": [
+        4
+      ],
+      "retrieved_doc_ids": [
+        4,
+        4,
+        13,
+        13,
+        4
+      ],
+      "retrieved_titles": [
+        "CC 商城 物流异常处理规则",
+        "CC 商城 物流异常处理规则",
+        "CC 商城 退款到账时间说明",
+        "CC 商城 退款到账时间说明",
+        "CC 商城 物流异常处理规则"
+      ],
+      "top_scores": [
+        0.769,
+        0.1646,
+        0.1083,
+        0.0838,
+        0.0601
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9139
+    },
+    {
+      "id": 107,
+      "question": "金卡和钻石卡哪个划算",
+      "category": "会员",
+      "expected_doc_ids": [
+        7
+      ],
+      "retrieved_doc_ids": [
+        7,
+        7,
+        7,
+        6,
+        2
+      ],
+      "retrieved_titles": [
+        "CC 商城 会员等级与权益",
+        "CC 商城 会员等级与权益",
+        "CC 商城 会员等级与权益",
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 质量问题处理规则"
+      ],
+      "top_scores": [
+        0.5646,
+        0.2021,
+        0.1063,
+        0.016,
+        0.0098
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9515
+    },
+    {
+      "id": 108,
+      "question": "我这单能减多少",
+      "category": "优惠券",
+      "expected_doc_ids": [
+        5,
+        6
+      ],
+      "retrieved_doc_ids": [
+        6,
+        6,
+        6,
+        12,
+        6
+      ],
+      "retrieved_titles": [
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 优惠券叠加使用规则",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 优惠券叠加使用规则"
+      ],
+      "top_scores": [
+        0.1734,
+        0.0792,
+        0.0771,
+        0.0428,
+        0.0224
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9224
+    },
+    {
+      "id": 109,
+      "question": "我买的耳机和鞋子能一起退吗",
+      "category": "退换货",
+      "expected_doc_ids": [
+        8,
+        1,
+        9
+      ],
+      "retrieved_doc_ids": [
+        1,
+        9,
+        8,
+        12,
+        2
+      ],
+      "retrieved_titles": [
+        "CC 商城 7 天无理由退货政策",
+        "商品手册：CC Run X1 男女款运动跑鞋",
+        "商品手册：CC Pods Pro 无线蓝牙耳机",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 质量问题处理规则"
+      ],
+      "top_scores": [
+        0.0996,
+        0.0332,
+        0.0313,
+        0.0252,
+        0.0116
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9198
+    },
+    {
+      "id": 110,
+      "question": "我充错钱了想退能不能给我退到信用卡上",
+      "category": "退款",
+      "expected_doc_ids": [
+        13
+      ],
+      "retrieved_doc_ids": [
+        13,
+        13,
+        13,
+        12,
+        13
+      ],
+      "retrieved_titles": [
+        "CC 商城 退款到账时间说明",
+        "CC 商城 退款到账时间说明",
+        "CC 商城 退款到账时间说明",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 退款到账时间说明"
+      ],
+      "top_scores": [
+        0.018,
+        0.0162,
+        0.016,
+        0.0105,
+        0.0103
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9425
+    },
+    {
+      "id": 111,
+      "question": "前两天买的现在便宜了20块咋办",
+      "category": "价保",
+      "expected_doc_ids": [
+        12
+      ],
+      "retrieved_doc_ids": [
+        12,
+        2,
+        5,
+        12,
+        12
+      ],
+      "retrieved_titles": [
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 质量问题处理规则",
+        "CC 商城 优惠券适用范围规则",
+        "CC 商城 价格保护（价保）规则",
+        "CC 商城 价格保护（价保）规则"
+      ],
+      "top_scores": [
+        0.1235,
+        0.0674,
+        0.0336,
+        0.0276,
+        0.0211
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9364
+    },
+    {
+      "id": 112,
+      "question": "晚上 11 点了找客服还能找到人吗",
+      "category": "客服",
+      "expected_doc_ids": [
+        10
+      ],
+      "retrieved_doc_ids": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "retrieved_titles": [
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 客服服务时间与渠道",
+        "CC 商城 客服服务时间与渠道"
+      ],
+      "top_scores": [
+        0.0647,
+        0.0189,
+        0.008,
+        0.0019,
+        0.0015
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9437
+    },
+    {
+      "id": 113,
+      "question": "我开普通发票还是专票好",
+      "category": "发票",
+      "expected_doc_ids": [
+        11
+      ],
+      "retrieved_doc_ids": [
+        11,
+        11,
+        11,
+        7,
+        11
+      ],
+      "retrieved_titles": [
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策",
+        "CC 商城 发票开具政策",
+        "CC 商城 会员等级与权益",
+        "CC 商城 发票开具政策"
+      ],
+      "top_scores": [
+        0.4615,
+        0.3489,
+        0.068,
+        0.0383,
+        0.0153
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9290
+    },
+    {
+      "id": 114,
+      "question": "差评被商家骚扰怎么办",
+      "category": "评价",
+      "expected_doc_ids": [
+        14
+      ],
+      "retrieved_doc_ids": [
+        14,
+        14,
+        14,
+        14,
+        14
+      ],
+      "retrieved_titles": [
+        "CC 商城 用户评价管理规则",
+        "CC 商城 用户评价管理规则",
+        "CC 商城 用户评价管理规则",
+        "CC 商城 用户评价管理规则",
+        "CC 商城 用户评价管理规则"
+      ],
+      "top_scores": [
+        0.8731,
+        0.5672,
+        0.3039,
+        0.0759,
+        0.0171
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9154
+    },
+    {
+      "id": 115,
+      "question": "登录提示账号被冻结了什么情况",
+      "category": "账户",
+      "expected_doc_ids": [
+        15
+      ],
+      "retrieved_doc_ids": [
+        15,
+        15,
+        15,
+        15,
+        10
+      ],
+      "retrieved_titles": [
+        "CC 商城 账户安全规则",
+        "CC 商城 账户安全规则",
+        "CC 商城 账户安全规则",
+        "CC 商城 账户安全规则",
+        "CC 商城 客服服务时间与渠道"
+      ],
+      "top_scores": [
+        0.7811,
+        0.0311,
+        0.0058,
+        0.0045,
+        0.0031
+      ],
+      "hit": true,
+      "rank": 1,
+      "reciprocal_rank": 1.0,
+      "latency_ms": 9082
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{"id": 101, "question": "亲那个鞋子我穿了一下又不太喜欢能给我送回去不", "expected_doc_ids": [1, 9], "category": "退换货"}
+{"id": 102, "question": "买回来的衣服没拆吊牌但是洗过一次还能退么", "expected_doc_ids": [1], "category": "退换货"}
+{"id": 103, "question": "我买的口红还没用呢能退不", "expected_doc_ids": [1], "category": "退换货"}
+{"id": 104, "question": "包邮门坎是多少", "expected_doc_ids": [3], "category": "物流"}
+{"id": 105, "question": "你们家东西到江西要几天", "expected_doc_ids": [3], "category": "物流"}
+{"id": 106, "question": "明明显示送到了我也没收到啊", "expected_doc_ids": [4], "category": "物流"}
+{"id": 107, "question": "金卡和钻石卡哪个划算", "expected_doc_ids": [7], "category": "会员"}
+{"id": 108, "question": "我这单能减多少", "expected_doc_ids": [5, 6], "category": "优惠券"}
+{"id": 109, "question": "我买的耳机和鞋子能一起退吗", "expected_doc_ids": [1, 8, 9], "category": "退换货"}
+{"id": 110, "question": "我充错钱了想退能不能给我退到信用卡上", "expected_doc_ids": [13], "category": "退款"}
+{"id": 111, "question": "前两天买的现在便宜了20块咋办", "expected_doc_ids": [12], "category": "价保"}
+{"id": 112, "question": "晚上 11 点了找客服还能找到人吗", "expected_doc_ids": [10], "category": "客服"}
+{"id": 113, "question": "我开普通发票还是专票好", "expected_doc_ids": [11], "category": "发票"}
+{"id": 114, "question": "差评被商家骚扰怎么办", "expected_doc_ids": [14], "category": "评价"}
+{"id": 115, "question": "登录提示账号被冻结了什么情况", "expected_doc_ids": [15], "category": "账户"}
