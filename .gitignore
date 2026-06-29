@@ -54,6 +54,9 @@ data/eval/private/
 # Docker volumes 数据
 infra/data/
 
+# ============ 私人导师日志（不上传 GitHub）============
+mentor-log/
+
 # Python 虚拟环境
 backend/venv/
 backend/__pycache__/
