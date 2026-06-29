@@ -31,6 +31,11 @@ class Settings(BaseSettings):
     llm_max_tokens: int = 1024
     llm_temperature: float = 0.7
 
+    # Embedding 独立配置（DeepSeek 没 embedding 端点，强制走硅基流动）
+    embedding_base_url: str = "https://api.siliconflow.cn/v1"
+    embedding_api_key: str = ""  # 留空则使用 llm_api_key
+    embedding_model: str = "BAAI/bge-m3"
+
     # 兼容旧字段（暂时保留，避免历史 .env 报错）
     deepseek_api_key: str = ""
     siliconflow_api_key: str = ""

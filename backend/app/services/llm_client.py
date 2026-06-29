@@ -26,6 +26,8 @@ class LLMClient:
         messages: list[dict],
         max_tokens: int | None = None,
         temperature: float | None = None,
+        tools: list[dict] | None = None,
+        tool_choice = None,
     ) -> dict:
         """调用 LLM，返回结构化结果
 
@@ -44,19 +46,34 @@ class LLMClient:
         """
         start = time.time()
 
-        response = self.client.chat.completions.create(
-            model=self.model,
-            messages=messages,
-            max_tokens=max_tokens or self.max_tokens,
-            temperature=(
+        kwargs = {
+            "model": self.model,
+            "messages": messages,
+            "max_tokens": max_tokens or self.max_tokens,
+            "temperature": (
                 temperature if temperature is not None else self.temperature
             ),
-        )
+        }
+        if tools:
+            kwargs["tools"] = tools
+            # tool_choice 优先级：调用方传入 > 默认 auto
+            kwargs["tool_choice"] = tool_choice if tool_choice is not None else "auto"
 
+        response = self.client.chat.completions.create(**kwargs)
         latency_ms = int((time.time() - start) * 1000)
 
+        msg = response.choices[0].message
+
+        # 🔍 调试日志（确认 API 是否返回 tool_calls）
+        if tools:
+            print(f"\n[LLM DEBUG] model={response.model}, latency={latency_ms}ms")
+            print(f"[LLM DEBUG] content (前 100 字): {(msg.content or '')[:100]}")
+            print(f"[LLM DEBUG] tool_calls: {msg.tool_calls}")
+            print(f"[LLM DEBUG] finish_reason: {response.choices[0].finish_reason}\n")
+
         return {
-            "content": response.choices[0].message.content,
+            "content": msg.content,
+            "tool_calls": msg.tool_calls,
             "tokens": response.usage.total_tokens if response.usage else 0,
             "latency_ms": latency_ms,
             "model": response.model or self.model,

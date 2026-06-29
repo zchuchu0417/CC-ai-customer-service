@@ -21,11 +21,12 @@ RERANKER_MODEL = "BAAI/bge-reranker-v2-m3"
 
 class RerankerClient:
     def __init__(self):
-        if not settings.llm_api_key:
-            raise ValueError("LLM_API_KEY 未配置")
-        self.api_key = settings.llm_api_key
-        # 硅基流动 rerank 端点：在 base_url 同级
-        self.endpoint = settings.llm_base_url.rstrip("/") + "/rerank"
+        # Reranker 也走硅基流动（DeepSeek 没此端点）
+        api_key = settings.embedding_api_key or settings.llm_api_key
+        if not api_key:
+            raise ValueError("EMBEDDING_API_KEY 或 LLM_API_KEY 至少配一个")
+        self.api_key = api_key
+        self.endpoint = settings.embedding_base_url.rstrip("/") + "/rerank"
         self.model = RERANKER_MODEL
 
     def rerank(

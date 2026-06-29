@@ -19,15 +19,17 @@ EMBEDDING_DIMENSIONS = 1024  # bge-m3 输出维度
 
 class EmbeddingClient:
     def __init__(self):
-        if not settings.llm_api_key:
-            raise ValueError("LLM_API_KEY 未配置")
+        # 优先用专门的 embedding_api_key，没配则 fallback 用 llm_api_key
+        api_key = settings.embedding_api_key or settings.llm_api_key
+        if not api_key:
+            raise ValueError("EMBEDDING_API_KEY 或 LLM_API_KEY 至少配一个")
 
         self.client = OpenAI(
-            api_key=settings.llm_api_key,
-            base_url=settings.llm_base_url,
+            api_key=api_key,
+            base_url=settings.embedding_base_url,  # 永远走硅基流动
             timeout=30.0,
         )
-        self.model = DEFAULT_EMBEDDING_MODEL
+        self.model = settings.embedding_model or DEFAULT_EMBEDDING_MODEL
 
     def embed(self, text: str) -> list[float]:
         """单个文本转向量"""

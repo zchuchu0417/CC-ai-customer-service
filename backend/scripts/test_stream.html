@@ -16,6 +16,11 @@
     .citations { margin-top: 16px; }
     .citation-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; margin-top: 8px; font-size: 12px; }
     .citation-card .title { color: #1f3864; font-weight: 600; }
+    .status { color: #64748b; font-size: 12px; font-style: italic; padding: 4px 0; transition: opacity 0.3s; }
+    .tool-call { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 10px 14px; margin: 8px 0; font-family: 'Consolas', monospace; font-size: 12px; }
+    .tool-call .tool-name { color: #92400e; font-weight: bold; }
+    .tool-call pre { margin: 4px 0 0 0; color: #334155; white-space: pre-wrap; font-size: 11px; }
+    .tool-result { background: #dcfce7; border: 1px solid #16a34a; border-radius: 8px; padding: 10px 14px; margin: 8px 0; font-family: 'Consolas', monospace; font-size: 11px; color: #14532d; }
     .cursor::after { content: '▌'; animation: blink 0.8s infinite; color: #1f3864; }
     @keyframes blink { 50% { opacity: 0; } }
   </style>
@@ -29,6 +34,8 @@
     <button id="sendBtn" onclick="send()">发送</button>
   </div>
 
+  <div id="status" class="status"></div>
+  <div id="tools"></div>
   <div class="answer cursor" id="answer">点击发送，AI 会逐字回复…</div>
 
   <div class="meta" id="meta" style="display:none"></div>
@@ -47,6 +54,8 @@
       answerEl.classList.add('cursor');
       metaEl.style.display = 'none';
       citEl.innerHTML = '';
+      document.getElementById('status').textContent = '';
+      document.getElementById('tools').innerHTML = '';
       btn.disabled = true;
       btn.textContent = '思考中...';
 
@@ -103,7 +112,26 @@
       let data;
       try { data = JSON.parse(dataStr); } catch { data = dataStr; }
 
-      if (event === 'start') {
+      if (event === 'status') {
+        const statusEl = document.getElementById('status');
+        statusEl.textContent = data.message || '';
+      } else if (event === 'tool_call') {
+        // 🛠 AI 决定调用工具
+        const toolsEl = document.getElementById('tools');
+        toolsEl.innerHTML += `
+          <div class="tool-call">
+            <div class="tool-name">🔧 调用 ${data.name}(...)</div>
+            <pre>${JSON.stringify(data.args, null, 2)}</pre>
+          </div>`;
+      } else if (event === 'tool_result') {
+        // ✅ 工具执行完成
+        const toolsEl = document.getElementById('tools');
+        toolsEl.innerHTML += `
+          <div class="tool-result">
+            ✅ ${data.name} 返回：
+            <pre>${JSON.stringify(data.result, null, 2)}</pre>
+          </div>`;
+      } else if (event === 'start') {
         if (data.citations && data.citations.length) {
           citEl.innerHTML = '<h3>📚 引用</h3>' + data.citations.map(c => `
             <div class="citation-card">
