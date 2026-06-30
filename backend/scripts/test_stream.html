@@ -21,6 +21,9 @@
     .tool-call .tool-name { color: #92400e; font-weight: bold; }
     .tool-call pre { margin: 4px 0 0 0; color: #334155; white-space: pre-wrap; font-size: 11px; }
     .tool-result { background: #dcfce7; border: 1px solid #16a34a; border-radius: 8px; padding: 10px 14px; margin: 8px 0; font-family: 'Consolas', monospace; font-size: 11px; color: #14532d; }
+    .emotion-badge { display: inline-flex; align-items: center; gap: 8px; background: #fee2e2; border: 1px solid #fca5a5; border-radius: 999px; padding: 6px 14px; margin: 8px 0; font-size: 12px; color: #991b1b; font-weight: 600; }
+    .emotion-badge.medium { background: #fef3c7; border-color: #fcd34d; color: #92400e; }
+    .emotion-badge.low { background: #ecfeff; border-color: #67e8f9; color: #155e75; }
     .cursor::after { content: '▌'; animation: blink 0.8s infinite; color: #1f3864; }
     @keyframes blink { 50% { opacity: 0; } }
   </style>
@@ -115,6 +118,17 @@
       if (event === 'status') {
         const statusEl = document.getElementById('status');
         statusEl.textContent = data.message || '';
+      } else if (event === 'emotion') {
+        // 🎭 情绪标签
+        const toolsEl = document.getElementById('tools');
+        const intensity = data.intensity;
+        const level = intensity >= 7 ? 'high' : intensity >= 4 ? 'medium' : 'low';
+        const icon = data.label === 'anger' ? '😡' : data.label === 'disappointment' ? '😔' : data.label === 'anxiety' ? '😟' : data.label === 'complaint' ? '⚠️' : '🙂';
+        toolsEl.innerHTML += `
+          <div class="emotion-badge ${level}">
+            ${icon} 情绪：${data.label_cn} · 强度 ${intensity}/10
+            <span style="opacity:0.6; font-weight: normal">· 触发：${data.matched_keywords.join('、')}</span>
+          </div>`;
       } else if (event === 'tool_call') {
         // 🛠 AI 决定调用工具
         const toolsEl = document.getElementById('tools');

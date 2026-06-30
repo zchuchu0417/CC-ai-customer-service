@@ -25,6 +25,7 @@ from app.models import Message, Session as SessionModel
 from app.services.llm_client import llm_client
 from app.services import rag_service
 from app.services.agent_tools import TOOL_SCHEMAS, execute_tool
+from app.services.emotion_detector import detect_emotion, build_emotion_prompt
 
 
 # 订单号正则（ORD + 至少 6 位数字）
@@ -265,6 +266,25 @@ def chat_stream(
         "data": {"stage": "received", "message": "✓ 收到问题"},
     }
 
+    # === 🆕 Step 2.5: 情绪检测（毫秒级，关键词词库匹配）===
+    emotion = detect_emotion(user_content)
+    if emotion["intensity"] >= 4:
+        # 推 SSE 事件让前端/PM 可视化
+        yield {
+            "event": "emotion",
+            "data": {
+                "label": emotion["label"],
+                "label_cn": emotion["label_cn"],
+                "intensity": emotion["intensity"],
+                "matched_keywords": emotion["matched_keywords"],
+            },
+        }
+        # 更新 session 的 emotion_label 字段（运营回溯用）
+        session.emotion_label = emotion["label"]
+        # 强情绪自动升级 session 状态
+        if emotion["intensity"] >= 7:
+            session.status = "escalated"
+
     # === Step 3: RAG 检索（招呼语跳过）===
     relevant_chunks = []
     skip_rag = is_simple_greeting(user_content)
@@ -305,11 +325,15 @@ def chat_stream(
 
     # === Step 4: 构造 LLM 输入 ===
     if skip_rag:
-        # 招呼语用简化版 prompt
         system_prompt = "你是 CC 商城的智能客服助手，友好、简洁、回答用中文。如需查询具体业务，请引导用户提供更多信息。"
     else:
         rag_context = rag_service.format_context(relevant_chunks)
         system_prompt = RAG_SYSTEM_PROMPT.format(rag_context=rag_context)
+
+    # 🆕 情绪共情指令追加到 system prompt
+    emotion_prompt = build_emotion_prompt(emotion)
+    if emotion_prompt:
+        system_prompt = system_prompt + emotion_prompt
 
     history = (
         db.query(Message)
