@@ -138,6 +138,13 @@ def escalate_to_human(reason: str, urgency: str = "normal") -> dict:
         "queue_position": queue_position,
         "estimated_wait": wait_time,
         "channel": "已为您接入在线人工客服，请保持页面打开",
+        # 🆕 显式给 AI 范文（防它编电话号码）
+        "ai_response_template": (
+            f"已为您紧急转接人工客服，工单号 {ticket_id}，"
+            f"当前排队第 {queue_position} 位，预计 {wait_time} 内有客服联系您。"
+            "请保持本页面打开。"
+            "（请勿在回答中编造具体客服电话号码，CC 商城具体联系方式请查看官网底部。）"
+        ),
     }
 
 
